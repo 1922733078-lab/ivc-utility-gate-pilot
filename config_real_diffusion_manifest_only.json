@@ -1,0 +1,35 @@
+{
+  "experiment_name": "real_diffusion_manifest_utility_gate_sanity_check",
+  "dataset": "procedural_real_plus_real_diffusion_manifest",
+  "classes": ["red_square", "green_circle", "blue_x", "yellow_triangle", "purple_diamond"],
+  "seeds": [0, 1, 2],
+  "image_size": 32,
+  "shots_per_class": 4,
+  "test_per_class": 160,
+  "candidate_per_real": 0,
+  "candidate_mix": {
+    "useful": 1.0,
+    "label_drift": 0.0,
+    "artifact": 0.0
+  },
+  "gate": {
+    "min_confidence": 0.50,
+    "max_distance": 70.0,
+    "min_quality_std": 0.045,
+    "min_quality_mean": 0.03,
+    "max_quality_mean": 0.97,
+    "temperature": 1.35,
+    "require_label_match": true
+  },
+  "features": {
+    "downsample": 16,
+    "include_color_stats": true,
+    "include_edge_stats": true
+  },
+  "prototype_classifier": {
+    "distance": "euclidean",
+    "temperature": 1.35
+  },
+  "manifest": null,
+  "manifest_root": null
+}

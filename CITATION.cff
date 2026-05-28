@@ -5,9 +5,8 @@ type: software
 authors:
   - name: "Author names pending manuscript submission"
 date-released: 2026-05-28
-version: "v1.0.0"
-doi: "10.5281/zenodo.20424623"
+version: "v1.1.0"
 repository-code: "https://github.com/1922733078-lab/ivc-utility-gate-pilot"
-url: "https://doi.org/10.5281/zenodo.20424623"
-abstract: "A lightweight, reproducible procedural low-shot pilot experiment illustrating an auditable utility gate for synthetic/proxy images before they are treated as computer-vision evidence."
+url: "https://github.com/1922733078-lab/ivc-utility-gate-pilot"
+abstract: "A lightweight, reproducible low-shot utility-gate supplement with a procedural pilot and a small real-diffusion sanity check illustrating auditable filtering before synthetic/proxy images are treated as computer-vision evidence."
 license: MIT

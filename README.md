@@ -8,7 +8,7 @@ package.
 Public archive:
 
 - GitHub: https://github.com/1922733078-lab/ivc-utility-gate-pilot
-- Zenodo DOI: https://doi.org/10.5281/zenodo.20424623
+- Zenodo DOI: pending for v1.1.0; v1.0.0 is archived at https://doi.org/10.5281/zenodo.20424623
 
 ## Experiment question
 
@@ -84,6 +84,30 @@ The default run writes:
 - `results/gate_audit.csv`: candidate-level gate audit.
 - `results/result_note.md`: compact result interpretation.
 - `results/run_config_resolved.json`: exact configuration used.
+
+## Real-diffusion sanity-check manifest
+
+The companion directory `real_diffusion_sanity_check/` contains a small
+ComfyUI run using a local SD1.5-style checkpoint. It is not a generator
+benchmark. Its purpose is to show that prompt-direct labels from real generated
+images still need disclosed filtering and candidate-level audit records.
+
+To run the manifest-only utility-gate check after the ComfyUI candidates have
+been generated and audited:
+
+```bash
+python3 run_experiment.py \
+  --config config_real_diffusion_manifest_only.json \
+  --manifest real_diffusion_sanity_check/outputs/real_diffusion_manifest.csv \
+  --manifest-root real_diffusion_sanity_check/outputs \
+  --out results_real_diffusion_manifest_only
+```
+
+The observed run generated 30 candidates, retained 12 after lightweight audit,
+and rejected 18. With the manifest only, the mean macro-F1 values were 0.7327
+for real-only, 0.3969 for real-plus-ungated, and 0.6839 for real-plus-gated.
+This supports the reporting logic without claiming that the checkpoint improves
+the task.
 
 ## Manifest interface for real synthetic images
 

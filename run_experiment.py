@@ -322,6 +322,8 @@ def make_candidates(
     rows: List[Dict[str, Any]] = []
     class_count = len(class_names)
     local_idx = 0
+    if per_real <= 0:
+        return np.empty((0, size, size, 3), dtype=np.uint8), np.empty((0,), dtype=np.int64), []
     for source_idx, declared_label in enumerate(real_labels):
         declared_label = int(declared_label)
         for _ in range(per_real):

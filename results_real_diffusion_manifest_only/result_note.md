@@ -1,32 +1,32 @@
 # Volta low-shot utility-gate result note
 
-Generated: 2026-05-28 15:23:52
+Generated: 2026-05-28 16:32:56
 
 Configuration:
 
-- Dataset: procedural
+- Dataset: procedural_real_plus_real_diffusion_manifest
 - Classes: red_square, green_circle, blue_x, yellow_triangle, purple_diamond
 - Seeds: [0, 1, 2]
 - Shots per class: 4
 - Test per class: 160
-- Candidate per real image: 20
+- Candidate per real image: 0
 
 Main metrics:
 
 | Regime | Accuracy mean | Accuracy std | Macro-F1 mean | Macro-F1 std |
 | --- | ---: | ---: | ---: | ---: |
 | real_only | 0.7333 | 0.0583 | 0.7327 | 0.0554 |
-| real_plus_ungated | 0.6121 | 0.0577 | 0.5681 | 0.0619 |
-| real_plus_gated | 0.6925 | 0.0163 | 0.6896 | 0.0151 |
+| real_plus_ungated | 0.4671 | 0.0139 | 0.3969 | 0.0167 |
+| real_plus_gated | 0.7533 | 0.0016 | 0.6839 | 0.0033 |
 
 Gate audit:
 
-- Candidate rows: 1200
-- Retained candidates: 219
-- Retention rate: 0.182
-- Known drift candidates: 931
-- Known drift retained: 81
-- Rejection reasons: far_from_real_prototype: 19, far_from_real_prototype+prototype_label_mismatch: 72, low_confidence: 22, low_confidence+far_from_real_prototype: 12, low_confidence+far_from_real_prototype+prototype_label_mismatch: 38, low_confidence+prototype_label_mismatch: 113, prototype_label_mismatch: 705
+- Candidate rows: 90
+- Retained candidates: 36
+- Retention rate: 0.400
+- Known drift candidates: 0
+- Known drift retained: 0
+- Rejection reasons: off_center_or_fragmented_foreground: 12, off_center_or_fragmented_foreground+weak_target_color_evidence: 21, weak_target_color_evidence: 21
 
 Interpretation:
 

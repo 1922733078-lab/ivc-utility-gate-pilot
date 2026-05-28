@@ -1,0 +1,50 @@
+{
+  "experiment_name": "real_diffusion_prompt_label_sanity_check",
+  "comfyui": {
+    "server_address": "127.0.0.1:8188",
+    "checkpoint": "DreamShaper8_modelscope_Yntec_dreamshaper_8.safetensors",
+    "sampler_name": "euler",
+    "scheduler": "normal",
+    "steps": 16,
+    "cfg": 7.0,
+    "width": 512,
+    "height": 512,
+    "batch_size": 1
+  },
+  "generation": {
+    "images_per_class": 6,
+    "base_seed": 20260528,
+    "negative_prompt": "text, watermark, signature, logo, cropped, blurry, low quality, distorted shape, multiple objects, cluttered background, photorealistic person, animal"
+  },
+  "classes": [
+    {
+      "label": "red_square",
+      "prompt": "a single centered red square icon on a plain dark neutral background, flat vector style, simple geometric shape, no text"
+    },
+    {
+      "label": "green_circle",
+      "prompt": "a single centered green circle icon on a plain dark neutral background, flat vector style, simple geometric shape, no text"
+    },
+    {
+      "label": "blue_x",
+      "prompt": "a single centered blue X mark icon on a plain dark neutral background, flat vector style, simple geometric shape, no text"
+    },
+    {
+      "label": "yellow_triangle",
+      "prompt": "a single centered yellow triangle icon on a plain dark neutral background, flat vector style, simple geometric shape, no text"
+    },
+    {
+      "label": "purple_diamond",
+      "prompt": "a single centered purple diamond icon on a plain dark neutral background, flat vector style, simple geometric shape, no text"
+    }
+  ],
+  "audit": {
+    "min_quality_std": 0.05,
+    "min_foreground_fraction": 0.01,
+    "max_foreground_fraction": 0.65,
+    "center_crop_fraction": 0.72,
+    "min_center_foreground_share": 0.45,
+    "target_color_margin": 0.03
+  }
+}
+
