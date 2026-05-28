@@ -5,6 +5,11 @@ Opinions Column manuscript on synthetic-image utility gates. It writes all
 results inside this directory and does not modify the manuscript or submission
 package.
 
+Public archive:
+
+- GitHub: https://github.com/1922733078-lab/ivc-utility-gate-pilot
+- Zenodo DOI: https://doi.org/10.5281/zenodo.20424623
+
 ## Experiment question
 
 In a low-shot classification setting, what changes when synthetic/proxy images
