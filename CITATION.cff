@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "Procedural low-shot utility-gate pilot for synthetic-image evidence"
+message: "If you use this pilot experiment, please cite the archived release."
+type: software
+authors:
+  - name: "Author names pending manuscript submission"
+date-released: 2026-05-28
+version: "v1.0.0"
+repository-code: "https://github.com/1922733078-lab/ivc-utility-gate-pilot"
+abstract: "A lightweight, reproducible procedural low-shot pilot experiment illustrating an auditable utility gate for synthetic/proxy images before they are treated as computer-vision evidence."
+license: MIT

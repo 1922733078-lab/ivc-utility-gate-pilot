@@ -1,0 +1,10 @@
+experiment_name,dataset,regime,seed,class_count,classes,shots_per_class,test_per_class,real_train_count,candidate_train_count,candidate_total,candidate_retained,accuracy,macro_f1
+volta_procedural_utility_gate,procedural,real_only,0,5,red_square|green_circle|blue_x|yellow_triangle|purple_diamond,4,160,20,0,400,72,0.81,0.8067282653403673
+volta_procedural_utility_gate,procedural,real_plus_ungated,0,5,red_square|green_circle|blue_x|yellow_triangle|purple_diamond,4,160,20,400,400,72,0.67375,0.613030973126939
+volta_procedural_utility_gate,procedural,real_plus_gated,0,5,red_square|green_circle|blue_x|yellow_triangle|purple_diamond,4,160,20,72,400,72,0.7125,0.7099553652281391
+volta_procedural_utility_gate,procedural,real_only,1,5,red_square|green_circle|blue_x|yellow_triangle|purple_diamond,4,160,20,0,400,81,0.66875,0.6734515963080522
+volta_procedural_utility_gate,procedural,real_plus_ungated,1,5,red_square|green_circle|blue_x|yellow_triangle|purple_diamond,4,160,20,400,400,81,0.6275,0.6106221734437914
+volta_procedural_utility_gate,procedural,real_plus_gated,1,5,red_square|green_circle|blue_x|yellow_triangle|purple_diamond,4,160,20,81,400,81,0.6725,0.6739585043974261
+volta_procedural_utility_gate,procedural,real_only,2,5,red_square|green_circle|blue_x|yellow_triangle|purple_diamond,4,160,20,0,400,66,0.72125,0.7180609188814174
+volta_procedural_utility_gate,procedural,real_plus_ungated,2,5,red_square|green_circle|blue_x|yellow_triangle|purple_diamond,4,160,20,400,400,66,0.535,0.4805027341521392
+volta_procedural_utility_gate,procedural,real_plus_gated,2,5,red_square|green_circle|blue_x|yellow_triangle|purple_diamond,4,160,20,66,400,66,0.6925,0.6848631582822657
