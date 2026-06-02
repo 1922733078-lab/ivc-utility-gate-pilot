@@ -3,7 +3,8 @@
 
 The script assumes that a local ComfyUI server is already running. It queues a
 minimal SD1.5 text-to-image workflow and saves returned images plus generation
-metadata. This is an illustrative supplement check, not a benchmark.
+metadata. It refuses non-local ComfyUI addresses. This is an illustrative
+supplement check, not a benchmark.
 """
 
 from __future__ import annotations
@@ -25,6 +26,14 @@ EXP_DIR = Path(__file__).resolve().parent
 def load_json(path: Path) -> Dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def require_local_server(server: str) -> str:
+    parsed = urllib.parse.urlparse(f"http://{server}")
+    host = parsed.hostname or ""
+    if host not in {"127.0.0.1", "localhost", "::1"}:
+        raise ValueError(f"Refusing to contact non-local ComfyUI server: {server}")
+    return server
 
 
 def request_json(url: str, payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -127,7 +136,7 @@ def main() -> None:
     args = parser.parse_args()
 
     config = load_json(args.config)
-    server = config["comfyui"]["server_address"]
+    server = require_local_server(config["comfyui"]["server_address"])
     out_dir = args.out.resolve()
     image_dir = out_dir / "images"
     meta_path = out_dir / "generation_metadata.csv"
@@ -187,4 +196,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

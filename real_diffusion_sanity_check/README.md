@@ -28,6 +28,12 @@ utility-gate pilot.
 
 Outputs are written under `outputs/`.
 
+## Safety note
+
+The generation script only contacts a local ComfyUI server: `127.0.0.1`,
+`localhost`, or `::1`. It refuses non-local server addresses. The archived
+outputs are included, so reviewers do not need to run the generator script.
+
 ## Observed run
 
 The fixed run used `DreamShaper8_modelscope_Yntec_dreamshaper_8.safetensors`

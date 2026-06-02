@@ -40,7 +40,7 @@
     "distance": "euclidean",
     "temperature": 1.35
   },
-  "manifest": "/Volumes/Graduate Program Documents/\u5c0f\u8bba\u6587/\u56fe\u50cf\u751f\u6210\u7efc\u8ff0/experiments/low_shot_utility_gate/real_diffusion_sanity_check/outputs/real_diffusion_manifest.csv",
-  "manifest_root": "/Volumes/Graduate Program Documents/\u5c0f\u8bba\u6587/\u56fe\u50cf\u751f\u6210\u7efc\u8ff0/experiments/low_shot_utility_gate/real_diffusion_sanity_check/outputs",
-  "output_dir": "/Volumes/Graduate Program Documents/\u5c0f\u8bba\u6587/\u56fe\u50cf\u751f\u6210\u7efc\u8ff0/experiments/low_shot_utility_gate/volta_full_experiment/results_real_diffusion_manifest_only"
+  "manifest": "real_diffusion_sanity_check/outputs/real_diffusion_manifest.csv",
+  "manifest_root": "real_diffusion_sanity_check/outputs",
+  "output_dir": "results_real_diffusion_manifest_only"
 }

@@ -1,8 +1,18 @@
 {
   "experiment_name": "real_diffusion_manifest_utility_gate_sanity_check",
   "dataset": "procedural_real_plus_real_diffusion_manifest",
-  "classes": ["red_square", "green_circle", "blue_x", "yellow_triangle", "purple_diamond"],
-  "seeds": [0, 1, 2],
+  "classes": [
+    "red_square",
+    "green_circle",
+    "blue_x",
+    "yellow_triangle",
+    "purple_diamond"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
   "image_size": 32,
   "shots_per_class": 4,
   "test_per_class": 160,
@@ -13,7 +23,7 @@
     "artifact": 0.0
   },
   "gate": {
-    "min_confidence": 0.50,
+    "min_confidence": 0.5,
     "max_distance": 70.0,
     "min_quality_std": 0.045,
     "min_quality_mean": 0.03,

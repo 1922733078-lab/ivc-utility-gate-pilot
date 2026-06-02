@@ -42,5 +42,5 @@
   },
   "manifest": null,
   "manifest_root": null,
-  "output_dir": "/Volumes/Graduate Program Documents/\u5c0f\u8bba\u6587/\u56fe\u50cf\u751f\u6210\u7efc\u8ff0/experiments/low_shot_utility_gate/volta_full_experiment/results_verify_after_real_diffusion_patch"
+  "output_dir": "results_verify_after_real_diffusion_patch"
 }

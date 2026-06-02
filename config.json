@@ -1,8 +1,18 @@
 {
   "experiment_name": "volta_procedural_utility_gate",
   "dataset": "procedural",
-  "classes": ["red_square", "green_circle", "blue_x", "yellow_triangle", "purple_diamond"],
-  "seeds": [0, 1, 2],
+  "classes": [
+    "red_square",
+    "green_circle",
+    "blue_x",
+    "yellow_triangle",
+    "purple_diamond"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
   "image_size": 32,
   "shots_per_class": 4,
   "test_per_class": 160,
@@ -10,10 +20,10 @@
   "candidate_mix": {
     "useful": 0.25,
     "label_drift": 0.65,
-    "artifact": 0.10
+    "artifact": 0.1
   },
   "gate": {
-    "min_confidence": 0.50,
+    "min_confidence": 0.5,
     "max_distance": 70.0,
     "min_quality_std": 0.045,
     "min_quality_mean": 0.03,

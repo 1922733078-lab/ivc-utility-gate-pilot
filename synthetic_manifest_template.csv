@@ -1,3 +1,3 @@
 path,label,label_source,generator_id,prompt,gate_decision,filter_reason,metadata_json
-synthetic_images/red_square_0001.png,red_square,prompt_direct,gpt-image-or-diffusion-vX,"a centered red square on a dark neutral background",,,"{""prompt_version"": ""v1""}"
-synthetic_images/green_circle_0001.png,green_circle,human_verified,gpt-image-or-diffusion-vX,"a centered green circle on a dark neutral background",retain,manual label check passed,"{""auditor"": ""initials""}"
+synthetic_images/red_square_0001.png,red_square,prompt_direct,gpt-image-or-diffusion-vX,a centered red square on a dark neutral background,,,"{""prompt_version"": ""v1""}"
+synthetic_images/green_circle_0001.png,green_circle,human_verified,gpt-image-or-diffusion-vX,a centered green circle on a dark neutral background,retain,manual label check passed,"{""auditor"": ""initials""}"

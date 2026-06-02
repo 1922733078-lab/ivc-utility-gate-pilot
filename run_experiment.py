@@ -64,6 +64,23 @@ def write_json(path: Path, payload: Dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
+def portable_path(path: Optional[Path], primary_root: Optional[Path] = None) -> Optional[str]:
+    """Return a package-relative path for public CSV/JSON outputs."""
+    if path is None:
+        return None
+    resolved = path.resolve()
+    bases = []
+    if primary_root is not None:
+        bases.append(primary_root.resolve())
+    bases.extend([EXP_DIR.resolve(), EXP_DIR.parent.resolve()])
+    for base in bases:
+        try:
+            return resolved.relative_to(base).as_posix()
+        except ValueError:
+            continue
+    return path.name
+
+
 def draw_shape(
     class_idx: int,
     rng: np.random.Generator,
@@ -398,7 +415,7 @@ def load_manifest(
 ) -> Tuple[np.ndarray, np.ndarray, List[Dict[str, Any]]]:
     if manifest_path is None:
         return np.empty((0, image_size, image_size, 3), dtype=np.uint8), np.empty((0,), dtype=np.int64), []
-    root = manifest_root or manifest_path.parent
+    root = (manifest_root or manifest_path.parent).resolve()
     images: List[np.ndarray] = []
     labels: List[int] = []
     rows: List[Dict[str, Any]] = []
@@ -411,10 +428,11 @@ def load_manifest(
             path = Path(raw_path)
             if not path.is_absolute():
                 path = root / path
+            display_path = portable_path(path, root)
             label = parse_manifest_label(row.get("label", ""), class_names)
             with Image.open(path) as image:
                 arr = np.asarray(image.convert("RGB").resize((image_size, image_size), Image.BILINEAR), dtype=np.uint8)
-            cid = row.get("candidate_id") or hashlib.sha1(str(path).encode("utf-8")).hexdigest()[:14]
+            cid = row.get("candidate_id") or hashlib.sha1(str(display_path).encode("utf-8")).hexdigest()[:14]
             images.append(arr)
             labels.append(label)
             rows.append(
@@ -423,7 +441,7 @@ def load_manifest(
                     "candidate_id": cid,
                     "source": "manifest_synthetic",
                     "candidate_kind": "manifest",
-                    "path": str(path),
+                    "path": display_path,
                     "declared_label_idx": label,
                     "declared_label_name": class_names[label],
                     "visual_label_idx": "",
@@ -773,9 +791,9 @@ def run(config: Dict[str, Any], out_dir: Path, manifest: Optional[Path], manifes
         ],
     )
     resolved = dict(config)
-    resolved["manifest"] = str(manifest) if manifest else None
-    resolved["manifest_root"] = str(manifest_root) if manifest_root else None
-    resolved["output_dir"] = str(out_dir.resolve())
+    resolved["manifest"] = portable_path(manifest, manifest_root) if manifest else None
+    resolved["manifest_root"] = portable_path(manifest_root) if manifest_root else None
+    resolved["output_dir"] = portable_path(out_dir)
     write_json(out_dir / "run_config_resolved.json", resolved)
     write_result_note(out_dir / "result_note.md", resolved, summary_rows, audit_rows_all)
 

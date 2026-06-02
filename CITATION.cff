@@ -3,7 +3,7 @@ title: "Procedural low-shot utility-gate pilot for synthetic-image evidence"
 message: "If you use this pilot experiment, please cite the archived release."
 type: software
 authors:
-  - name: "Author names pending manuscript submission"
+  - name: "IVC Utility Gate Pilot Contributors"
 date-released: 2026-05-28
 version: "v1.1.0"
 doi: "10.5281/zenodo.20425741"
