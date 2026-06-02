@@ -8,7 +8,7 @@ package.
 Public archive:
 
 - GitHub: https://github.com/1922733078-lab/ivc-utility-gate-pilot
-- Zenodo DOI: https://doi.org/10.5281/zenodo.20425741
+- Zenodo concept DOI: https://doi.org/10.5281/zenodo.20424622
 
 ## Experiment question
 
