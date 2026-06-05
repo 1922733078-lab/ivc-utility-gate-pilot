@@ -8,7 +8,10 @@ package.
 Public archive:
 
 - GitHub: https://github.com/1922733078-lab/ivc-utility-gate-pilot
+- Version DOI used in the manuscript: https://doi.org/10.5281/zenodo.20506364
 - Zenodo concept DOI: https://doi.org/10.5281/zenodo.20424622
+- GitHub release: https://github.com/1922733078-lab/ivc-utility-gate-pilot/releases/tag/v1.1.0
+- Release ZIP SHA256: `f666fe056fcd5fa87b78e9419a076711bfe0ab7a2ff34c86cfc1c5fab16c769f`
 
 ## Experiment question
 
@@ -60,18 +63,16 @@ piece proposing a standard, not a regular empirical article.
 
 ## Run
 
-From the workspace root:
+From the repository root:
 
 ```bash
-python3 experiments/low_shot_utility_gate/volta_full_experiment/run_experiment.py \
-  --config experiments/low_shot_utility_gate/volta_full_experiment/config.json \
-  --out experiments/low_shot_utility_gate/volta_full_experiment/results
+python3 run_experiment.py --config config.json --out results_reproduce
 ```
 
 The script requires only Python, numpy, and Pillow:
 
 ```bash
-python3 -m pip install -r experiments/low_shot_utility_gate/volta_full_experiment/requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ## Outputs
@@ -132,11 +133,11 @@ Recommended columns:
 Example:
 
 ```bash
-python3 experiments/low_shot_utility_gate/volta_full_experiment/run_experiment.py \
-  --config experiments/low_shot_utility_gate/volta_full_experiment/config.json \
-  --manifest experiments/low_shot_utility_gate/volta_full_experiment/my_manifest.csv \
-  --manifest-root experiments/low_shot_utility_gate/volta_full_experiment/synthetic_images \
-  --out experiments/low_shot_utility_gate/volta_full_experiment/results_with_manifest
+python3 run_experiment.py \
+  --config config.json \
+  --manifest my_manifest.csv \
+  --manifest-root synthetic_images \
+  --out results_with_manifest
 ```
 
 Manifest candidates are included in `real_plus_ungated`. For

@@ -6,8 +6,8 @@ authors:
   - name: "IVC Utility Gate Pilot Contributors"
 date-released: 2026-05-28
 version: "v1.1.0"
-doi: "10.5281/zenodo.20424622"
+doi: "10.5281/zenodo.20506364"
 repository-code: "https://github.com/1922733078-lab/ivc-utility-gate-pilot"
-url: "https://doi.org/10.5281/zenodo.20424622"
+url: "https://doi.org/10.5281/zenodo.20506364"
 abstract: "A lightweight, reproducible low-shot utility-gate supplement with a procedural pilot and a small real-diffusion sanity check illustrating auditable filtering before synthetic/proxy images are treated as computer-vision evidence."
 license: MIT
